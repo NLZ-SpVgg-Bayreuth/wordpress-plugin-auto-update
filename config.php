@@ -9,5 +9,5 @@ $package = function(string $name, string $code, string $path){
 };
 
 return [
-    $package('spvgg-auto-update', 'spvgg-auto-update', 'wp-content/plugins/spvgg-auto-update')
+    'spg-auto-updater' => $package('spvgg-auto-update', 'spvgg-auto-update', 'wp-content/plugins/spvgg-auto-update')
 ];
