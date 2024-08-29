@@ -1,4 +1,14 @@
 <?php
+/*
+Plugin Name: SpVgg Bayreuth Auto Update
+Plugin URI: https://github.com/NLZ-SpVgg-Bayreuth/wordpress-plugin-auto-update
+Description: This plugin allows you to update your private plugins from git repositories hosted on GitHub / GitLab / Gitea.
+Version: 1.0
+Author: Paul Schur
+Author URI: https://github.com/pschur
+License: GPL2
+*/
+
 
 if (isset($_GET['spvgg-auto-update']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $packages = require __DIR__.'/config.php';
@@ -90,7 +100,7 @@ if (isset($_GET['spvgg-auto-update']) && $_SERVER['REQUEST_METHOD'] === 'POST') 
                 copy($file, $old);
             }
         }
-        
+
         # Remove backup files
         $files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($path));
         foreach ($files as $file) {
